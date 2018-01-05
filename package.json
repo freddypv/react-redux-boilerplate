@@ -1,0 +1,41 @@
+{
+  "name": "react-redux-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "lintjs": "eslint src/. -c .eslintrc.json --ext .js,.json; exit 0;",
+    "lint": "npm-run-all -p lintjs lintcss",
+    "lintcss": "sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -q",
+    "build-css": "node-sass-chokidar src/scss -o src/scss",
+    "test:watch": "npm test -- --watch"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^22.0.4",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.14.0",
+    "eslint-config-react-app": "^2.0.1",
+    "eslint-plugin-flowtype": "^2.40.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.5.1",
+    "jest": "^22.0.4",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.2",
+    "sass-lint": "^1.12.1"
+  }
+}
