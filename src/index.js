@@ -1,11 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore } from 'redux'
+import configureStore from './store/store';
 import './scss/index.css';
-import todoApp from './reducers'
-import Root from './components/root/Root'
+import Root from './components/root/Root';
+import {createLogger} from 'redux-logger';
 
-let store = createStore(todoApp)
+const store = configureStore();
+
 
 render(
   <Root store={store} />,
