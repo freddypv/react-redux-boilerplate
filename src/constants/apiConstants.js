@@ -1,0 +1,1 @@
+export const apiUrl = 'https://gist.githubusercontent.com/freddypv/02fe4a86a8388957df1451d5a4912f4f/raw/b45802a6e04a7f21f74629378b3d618f9ea626f4/apiresponse.json';

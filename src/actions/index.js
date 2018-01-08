@@ -1,10 +1,19 @@
+import { getApiData } from '../api/index';
+
+
 let nextTodoId = 0
-export const addTodo = text => {
-  return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
-  }
+
+export function addTodo(text) {
+  return (dispatch) => {
+    getApiData(text).then((data) => {
+      nextTodoId += parseFloat(data.values.incrementstep);
+      dispatch({
+        type: 'ADD_TODO',
+        id: nextTodoId,
+        text
+      });
+    });
+  };
 }
 
 export const setVisibilityFilter = filter => {
